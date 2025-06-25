@@ -6,7 +6,7 @@ pub enum Side {
     Ask,
 }
 
-#[derive(BorshSerialize, Clone, Debug, PartialEq)]
+#[derive(BorshSerialize, Clone, PartialEq, Debug)]
 pub enum Swap {
     Exponent {
         exchange_rate: f64,
@@ -128,9 +128,45 @@ pub enum Swap {
     SolFi {
         is_quote_to_base: bool,
     },
+    SolayerDelegateNoInit,
+    SolayerUndelegateNoInit,
+    TokenMill {
+        side: Side,
+    },
+    DaosFunBuy,
+    DaosFunSell,
+    ZeroFi,
+    StakeDexWithdrawWrappedSol,
+    VirtualsBuy,
+    VirtualsSell,
+    Perena {
+        in_index: u8,
+        out_index: u8,
+    },
+    PumpdotfunAmmBuy,
+    PumpdotfunAmmSell,
+    Gamma,
+    MeteoraDlmmSwapV2 {
+        remaining_accounts_info: RemainingAccountsInfo,
+    },
+    Woofi,
+    MeteoraDammSwapV2,
+    MeteoraDynamicBondingCurveSwap,
+    StabbleStableSwapV2,
+    StabbleWeightedSwapV2,
+    RaydiumLaunchlabBuy {
+        share_fee_rate: u64,
+    },
+    RaydiumLaunchlabSell {
+        share_fee_rate: u64,
+    },
+    BoopdotfunWrappedBuy,
+    BoopdotfunWrappedSell,
+    Plasma {
+        side: Side,
+    },
 }
-
-#[derive(BorshSerialize, Copy, Clone, PartialEq, Eq, Debug)]
+#[derive(BorshSerialize, Clone, PartialEq, Eq, Debug)]
 pub enum AccountsType {
     TransferHookA,
     TransferHookB,
