@@ -8,9 +8,6 @@ pub enum Side {
 
 #[derive(BorshSerialize, Clone, PartialEq, Debug)]
 pub enum Swap {
-    Exponent {
-        exchange_rate: f64,
-    },
     Saber,
     SaberAddDecimalsDeposit,
     SaberAddDecimalsWithdraw,
@@ -164,6 +161,10 @@ pub enum Swap {
     BoopdotfunWrappedSell,
     Plasma {
         side: Side,
+    },
+    Exponent {
+        exchange_rate: f64,
+        rem_accounts_until: usize,
     },
 }
 #[derive(BorshSerialize, Clone, PartialEq, Eq, Debug)]
