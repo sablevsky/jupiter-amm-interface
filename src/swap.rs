@@ -164,6 +164,7 @@ pub enum Swap {
     },
     Exponent {
         exchange_rate: f64,
+        is_virtual_exchange_rate: bool,
         rem_accounts_until: usize,
     },
 }
